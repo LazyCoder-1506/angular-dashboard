@@ -1,0 +1,23 @@
+<div class="border border-gray-300 rounded shadow-lg mx-2 w-[250px]">
+  <div class="bg-indigo-800 rounded-t text-white font-bold p-3">{{ title }}</div>
+  <div class="flex flex-col h-[150px] justify-center items-center bg-white rounded-b p-3">
+    <div *ngIf="currentLabel == ''; then totalValueTemplate else currentValueTemplate"></div>
+    
+    <ng-template  #totalValueTemplate>
+      <span class="font-bold text-3xl mb-2">{{ totalValue }}</span>
+      <span class="italic text-gray-600" *ngIf="currentLabel == ''">Total: {{ totalValue }}</span>
+    </ng-template>
+    
+    <ng-template #currentValueTemplate>
+      <span class="text-gray-600 mb-2">{{ currentLabel }} (Till Today)</span>
+      <div class="flex justify-center items-center mb-2" *ngIf="currentLabel != ''">
+        <span class="font-bold text-3xl me-2">{{ metricCurrency != '' ? (currentValue | currency : metricCurrency : 'symbol' : '1.0-2') : (currentValue) }}</span>
+        <div class="flex items-center px-2 py-1 rounded-full bg-green-400">
+          <svg fill="#ffffff" height="8px" width="8px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 386.257 386.257" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <polygon points="0,96.879 193.129,289.379 386.257,96.879 "></polygon> </g></svg>
+          <span class="text-white text-xs ms-1">10%</span>
+        </div>
+      </div>
+      <span class="italic text-gray-600" *ngIf="currentLabel != ''">{{ previousLabel }}: {{ previousValue }}</span>
+    </ng-template>
+  </div>
+</div>
