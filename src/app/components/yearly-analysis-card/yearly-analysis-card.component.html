@@ -1,0 +1,25 @@
+<div class="border border-gray-300 rounded shadow-lg mx-2 w-[90vw] mb-4">
+  <div class="bg-indigo-800 rounded-t text-white font-bold p-3">Year On Year Analysis</div>
+  <div class="bg-white h-[500px]">
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" animationDuration="0ms">
+      <mat-tab label="AVG ADMISSION">
+        <div class="p-2 md:p-8">
+          <highcharts-chart
+            [Highcharts]="admissionChart"
+            [options]="admissionOptions"
+            style="width: 100%; display: block;"
+          ></highcharts-chart>
+        </div>
+      </mat-tab>
+      <mat-tab label="AVG ER">
+        <h1>Similar chart for ER</h1>
+      </mat-tab>
+      <mat-tab label="AVG SPECIALIST">
+        <h1>Similar chart for specialist</h1>
+      </mat-tab>
+      <mat-tab label="AVG COST">
+        <h1>Similar chart for cost</h1>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
