@@ -18,6 +18,16 @@ export class ChartCardComponent implements OnInit {
       title: {
         text: undefined
       },
+      // legend: {
+      //   align: 'right',
+      //   layout: 'vertical',
+      //   verticalAlign: 'middle'
+      // },
+      plotOptions: {
+        pie: {
+          slicedOffset: 0
+        }
+      },
       series: [
         {
           type: 'pie',

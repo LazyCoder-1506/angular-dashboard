@@ -1,0 +1,9 @@
+/* :host.large {
+  width: 19%;
+}
+:host.small {
+  width: 15%;
+} */
+:host {
+  width: calc(50% - 16px);
+}
