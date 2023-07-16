@@ -11,7 +11,7 @@ export class SettingService {
 
   constructor(private http: HttpClient) { }
 
-  fetchSettings():Observable<Setting> {
-    return this.http.get<Setting>(this.settingEndpoint)
+  fetchSettings():Observable<any> {
+    return this.http.get<any>(this.settingEndpoint)
   }
 }

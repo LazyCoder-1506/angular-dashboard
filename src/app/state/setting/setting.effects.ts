@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { SettingService } from "src/app/services/setting.service";
-import * as SettingActions from "./setting.action";
+import { getSettings, getSettingsSuccess, getSettingsError } from "./setting.action";
 import { catchError, map, exhaustMap, of } from "rxjs";
 
 @Injectable()
@@ -10,13 +10,11 @@ export class SettingEffects {
 
   getSettings$ = createEffect(() => 
     this.actions$.pipe(
-      ofType(SettingActions.getSettings),
-      exhaustMap(() => {
-        return this.service.fetchSettings().pipe(
-          map((settings) => SettingActions.getSettingsSuccess({ settings })),
-          catchError((error) => of(SettingActions.getSettingsError({ error: error.message })))
-        )
-      })
+      ofType(getSettings),
+      exhaustMap(() => this.service.fetchSettings().pipe(
+        map((settings) => getSettingsSuccess({ settings })),
+        catchError((error) => of(getSettingsError({ error: error.message })))
+      ))
     )
   )
 }

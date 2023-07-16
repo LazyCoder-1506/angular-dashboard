@@ -1,6 +1,6 @@
 {
   "settings": {
-    "layout": "column",
+    "layout": "row",
     "cardSize": "small",
     "chartSize": "small",
     "sectionOrder": ["charts", "cards", "yearly"],

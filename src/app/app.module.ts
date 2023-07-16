@@ -5,6 +5,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
@@ -16,7 +17,6 @@ import { YearlyAnalysisCardComponent } from './components/yearly-analysis-card/y
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { settingReducer } from './state/setting/setting.reducer';
 import { SettingEffects } from './state/setting/setting.effects';
 
 @NgModule({
@@ -36,9 +36,10 @@ import { SettingEffects } from './state/setting/setting.effects';
     HighchartsChartModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    StoreModule.forRoot({ state: settingReducer }),
+    StoreModule.forRoot({}),
     EffectsModule.forRoot([SettingEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: isDevMode() }),
+    DashboardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

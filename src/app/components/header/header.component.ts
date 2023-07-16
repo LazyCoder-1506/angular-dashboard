@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   isLoading$: Observable<boolean>;
 
   constructor(private store: Store<AppState>) {
-    this.isLoading$ = this.store.pipe(select(isLoadingSelector))
+    // this.isLoading$ = this.store.pipe(select(isLoadingSelector))
   }
 
   ngOnInit(): void {
