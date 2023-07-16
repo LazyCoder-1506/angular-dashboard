@@ -4,6 +4,9 @@
 :host.small {
   width: 15%;
 } */
-:host {
+/* :host {
   width: calc(50% - 16px);
+} */
+:host {
+  width: 100%;
 }

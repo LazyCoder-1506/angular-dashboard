@@ -17,7 +17,7 @@ export const initialState: SettingState = {
     cardOrder: ['population', 'ER', 'admission', 'cost', 'specialist'],
     chartOrder: ['age', 'location'],
   },
-  isLoading: false,
+  isLoading: true,
   error: null
 }
 

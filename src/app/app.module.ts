@@ -1,8 +1,10 @@
 import { NgModule, isDevMode } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
@@ -15,6 +17,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { settingReducer } from './state/setting/setting.reducer';
+import { SettingEffects } from './state/setting/setting.effects';
 
 @NgModule({
   declarations: [
@@ -27,12 +30,14 @@ import { settingReducer } from './state/setting/setting.reducer';
     YearlyAnalysisCardComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
+    HttpClientModule,
     HighchartsChartModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    StoreModule.forRoot({ setting: settingReducer }),
-    EffectsModule.forRoot([]),
+    StoreModule.forRoot({ state: settingReducer }),
+    EffectsModule.forRoot([SettingEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: isDevMode() }),
   ],
   providers: [],
