@@ -1,6 +1,6 @@
 <ng-container *ngIf="!(isLoading$ | async)">
   <ng-container *ngIf="(settings$ | async) as settingsObject">
-    <div *ngIf="settingsObject?.layout == 'row'">
+    <div class="p-2 md:p-8" *ngIf="settingsObject?.layout == 'row'">
       <div class="flex my-4 justify-between">
         <app-number-card title="Cohort Population" [totalValue]="2500"></app-number-card>
         <app-number-card title="Total ER" [currentValue]="3969" currentLabel="April-2023" [previousValue]="4459" previousLabel="March-2023"></app-number-card>
@@ -20,7 +20,7 @@
     <!-- <h1>Settings value: {{ (settings$ | async) | json }}</h1> -->
 
 
-    <div class="grid grid-cols-10 gap-4" *ngIf="settingsObject?.layout == 'column'">
+    <div class="grid grid-cols-10 gap-4 p-2 md:p-8" *ngIf="settingsObject?.layout == 'column'">
       <div class="col-span-3 flex flex-wrap gap-4 justify-center self-start">
         <app-number-card title="Cohort Population" [totalValue]="2500"></app-number-card>
         <app-number-card title="Total ER" [currentValue]="3969" currentLabel="April-2023" [previousValue]="4459" previousLabel="March-2023"></app-number-card>

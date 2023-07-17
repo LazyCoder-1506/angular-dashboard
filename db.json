@@ -1,10 +1,10 @@
 {
   "settings": {
-    "layout": "row",
+    "layout": "column",
     "cardSize": "small",
     "chartSize": "small",
     "sectionOrder": ["charts", "cards", "yearly"],
     "cardOrder": ["population", "ER", "admission", "cost", "specialist"],
-    "chartOrder": ["age", "location"]
+    "chartOrder": ["location", "age"]
   }
 }

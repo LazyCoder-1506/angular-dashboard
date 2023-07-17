@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatRadioModule } from '@angular/material/radio';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard.module';
 
@@ -18,6 +21,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SettingEffects } from './state/setting/setting.effects';
+import { SettingsDialogComponent } from './components/settings-dialog/settings-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,8 @@ import { SettingEffects } from './state/setting/setting.effects';
     BodyComponent,
     NumberCardComponent,
     ChartCardComponent,
-    YearlyAnalysisCardComponent
+    YearlyAnalysisCardComponent,
+    SettingsDialogComponent
   ],
   imports: [
     CommonModule,
@@ -36,6 +41,9 @@ import { SettingEffects } from './state/setting/setting.effects';
     HighchartsChartModule,
     BrowserAnimationsModule,
     MatTabsModule,
+    MatDialogModule,
+    MatRadioModule,
+    DragDropModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([SettingEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: isDevMode() }),

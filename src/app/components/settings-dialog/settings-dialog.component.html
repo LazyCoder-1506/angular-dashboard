@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>Configure Your Dashboard</h1>
+<div mat-dialog-content>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div>
+      <mat-radio-group name="layout">
+        <span class="font-bold block">Layout</span>
+        <mat-radio-button value="row" [checked]="layout == 'row'">Row</mat-radio-button>
+        <mat-radio-button value="column" [checked]="layout == 'column'">Column</mat-radio-button>
+      </mat-radio-group>
+      <mat-radio-group name="cardSize">
+        <span class="font-bold block">Card Size</span>
+        <mat-radio-button value="small" [checked]="cardSize == 'small'">Small</mat-radio-button>
+        <mat-radio-button value="large" [checked]="cardSize == 'large'">Large</mat-radio-button>
+      </mat-radio-group>
+      <mat-radio-group name="chartSize">
+        <span class="font-bold block">Chart Size</span>
+        <mat-radio-button value="small" [checked]="chartSize == 'small'">Small</mat-radio-button>
+        <mat-radio-button value="large" [checked]="chartSize == 'large'">Large</mat-radio-button>
+      </mat-radio-group>
+      <div class="mt-4">
+        <p class="font-bold">Reorder Sections</p>
+        <div cdkDropList class="example-list" id="sectionList" (cdkDropListDropped)="sectionDrop($event)">
+          <div class="example-box" *ngFor="let section of sectionOrder" cdkDragLockAxis="y" cdkDragBoundary="#sectionList" cdkDrag>{{section}}</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="mb-4">
+        <p class="font-bold">Reorder Cards</p>
+        <div cdkDropList class="example-list" id="cardList" (cdkDropListDropped)="cardDrop($event)">
+          <div class="example-box" *ngFor="let card of cardOrder" cdkDragLockAxis="y" cdkDragBoundary="#cardList" cdkDrag>{{card}}</div>
+        </div>
+      </div>
+      <div>
+        <p class="font-bold">Reorder Charts</p>
+        <div cdkDropList class="example-list" id="columnList" (cdkDropListDropped)="chartDrop($event)">
+          <div class="example-box" *ngFor="let chart of chartOrder" cdkDragLockAxis="y" cdkDragBoundary="#columnList" cdkDrag>{{chart}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions class="flex justify-center">
+  <button class="text-white bg-indigo-600 border border-indigo-600 px-4 py-2 rounded me-2" (click)="onCancel()">Save</button>
+  <button class="text-indigo-600 border border-gray-400 px-3 py-2 rounded" (click)="onCancel()">Cancel</button>
+</div>

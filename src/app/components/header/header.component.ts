@@ -1,23 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { AppState } from 'src/app/state/app.state';
-import { isLoadingSelector } from 'src/app/state/setting/setting.selector';
+import { MatDialog } from '@angular/material/dialog'
+import { SettingsDialogComponent } from '../settings-dialog/settings-dialog.component';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
-  isLoading$: Observable<boolean>;
+export class HeaderComponent {
+  constructor(public dialog: MatDialog) {}
 
-  constructor(private store: Store<AppState>) {
-    // this.isLoading$ = this.store.pipe(select(isLoadingSelector))
+  openDialog(): void {
+    const dialogRef = this.dialog.open(SettingsDialogComponent, {
+      panelClass: 'setting-dialog'
+    })
   }
-
-  ngOnInit(): void {
-    
-  }
-
 }
