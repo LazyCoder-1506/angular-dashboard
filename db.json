@@ -2,7 +2,7 @@
   "settings": {
     "layout": "row",
     "cardSize": "large",
-    "chartSize": "large",
+    "chartType": "column",
     "cardOrder": [
       "cost",
       "population",

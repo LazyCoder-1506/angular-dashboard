@@ -1,12 +1,12 @@
-/* :host.large {
+:host {
+  width: 100%;
+}
+:host.large {
   width: 19%;
 }
 :host.small {
   width: 15%;
-} */
-/* :host {
+} 
+:host.column-small {
   width: calc(50% - 16px);
-} */
-:host {
-  width: 100%;
 }

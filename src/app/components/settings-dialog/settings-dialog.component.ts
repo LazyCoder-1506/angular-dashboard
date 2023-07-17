@@ -17,7 +17,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   layout: "row" | "column";
   cardSize: "small" | "large";
-  chartSize: "small" | "large";
+  chartType: "donut" | "column";
   sectionOrder: string[];
   cardOrder: string[];
   chartOrder: string[];
@@ -30,7 +30,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     this.subscription = this.settings$.subscribe(value => {
       this.layout = value.layout;
       this.cardSize = value.cardSize;
-      this.chartSize = value.chartSize;
+      this.chartType = value.chartType;
       this.sectionOrder = [...value.sectionOrder];
       this.cardOrder = [...value.cardOrder];
       this.chartOrder = [...value.chartOrder];
@@ -49,7 +49,7 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
     const newSetting: Setting = {
       layout: this.layout,
       cardSize: this.cardSize,
-      chartSize: this.chartSize,
+      chartType: this.chartType,
       cardOrder: this.cardOrder,
       sectionOrder: this.sectionOrder,
       chartOrder: this.chartOrder,
@@ -65,8 +65,8 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
   updateCardSize(value): void {
     this.cardSize = value
   }
-  updateChartSize(value): void {
-    this.chartSize = value
+  updateChartType(value): void {
+    this.chartType = value
   }
 
   sectionDrop(event: CdkDragDrop<string[]>) {

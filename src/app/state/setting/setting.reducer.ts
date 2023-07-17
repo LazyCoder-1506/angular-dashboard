@@ -12,7 +12,7 @@ export const initialState: SettingState = {
   settings: {
     layout: 'row',
     cardSize: 'large',
-    chartSize: 'large',
+    chartType: 'donut',
     sectionOrder: ['cards', 'charts', 'yearly'],
     cardOrder: ['population', 'ER', 'admission', 'cost', 'specialist'],
     chartOrder: ['age', 'location'],

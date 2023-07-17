@@ -12,10 +12,10 @@
         <mat-radio-button value="small" [checked]="cardSize == 'small'">Small</mat-radio-button>
         <mat-radio-button value="large" [checked]="cardSize == 'large'">Large</mat-radio-button>
       </mat-radio-group>
-      <mat-radio-group name="chartSize" (change)="updateChartSize($event.value)">
-        <span class="font-bold block">Chart Size</span>
-        <mat-radio-button value="small" [checked]="chartSize == 'small'">Small</mat-radio-button>
-        <mat-radio-button value="large" [checked]="chartSize == 'large'">Large</mat-radio-button>
+      <mat-radio-group name="chartType" (change)="updateChartType($event.value)">
+        <span class="font-bold block">Chart Type</span>
+        <mat-radio-button value="donut" [checked]="chartType == 'donut'">Donut</mat-radio-button>
+        <mat-radio-button value="column" [checked]="chartType == 'column'">Column</mat-radio-button>
       </mat-radio-group>
       <div class="mt-4">
         <p class="font-bold">Reorder Sections</p>

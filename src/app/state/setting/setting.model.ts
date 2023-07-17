@@ -1,7 +1,7 @@
 export interface Setting {
   layout: 'row' | 'column';
   cardSize: 'small' | 'large';
-  chartSize: 'small' | 'large';
+  chartType: 'donut' | 'column';
   sectionOrder: string[];
   cardOrder: string[];
   chartOrder: string[];
