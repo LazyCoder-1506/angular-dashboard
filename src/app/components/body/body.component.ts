@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as SettingActions from '../../state/setting/setting.action'
+import { getSettings } from '../../state/setting/setting.action'
 import { Observable, of } from 'rxjs';
 import { Setting } from 'src/app/state/setting/setting.model';
 import { isLoadingSelector, settingsSelector } from 'src/app/state/setting/setting.selector';
@@ -23,7 +23,7 @@ export class BodyComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(SettingActions.getSettings())
+    this.store.dispatch(getSettings())
     
   }
 }

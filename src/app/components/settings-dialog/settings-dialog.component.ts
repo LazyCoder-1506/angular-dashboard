@@ -5,6 +5,7 @@ import { Observable, Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { settingsSelector } from 'src/app/state/setting/setting.selector';
 import { Setting } from 'src/app/state/setting/setting.model';
+import { updateSettings } from '../../state/setting/setting.action'
 
 @Component({
   selector: 'app-settings-dialog',
@@ -14,9 +15,9 @@ import { Setting } from 'src/app/state/setting/setting.model';
 export class SettingsDialogComponent implements OnInit, OnDestroy {
   settings$: Observable<Setting>;
   private subscription: Subscription;
-  layout: string;
-  cardSize: string;
-  chartSize: string;
+  layout: "row" | "column";
+  cardSize: "small" | "large";
+  chartSize: "small" | "large";
   sectionOrder: string[];
   cardOrder: string[];
   chartOrder: string[];
@@ -42,6 +43,30 @@ export class SettingsDialogComponent implements OnInit, OnDestroy {
 
   onCancel(): void {
     this.dialogRef.close();
+  }
+
+  onSave(): void {
+    const newSetting: Setting = {
+      layout: this.layout,
+      cardSize: this.cardSize,
+      chartSize: this.chartSize,
+      cardOrder: this.cardOrder,
+      sectionOrder: this.sectionOrder,
+      chartOrder: this.chartOrder,
+    }
+    this.store.dispatch(updateSettings({ newSetting }))
+
+    this.onCancel()
+  }
+
+  updateLayout(value): void {
+    this.layout = value
+  }
+  updateCardSize(value): void {
+    this.cardSize = value
+  }
+  updateChartSize(value): void {
+    this.chartSize = value
   }
 
   sectionDrop(event: CdkDragDrop<string[]>) {
