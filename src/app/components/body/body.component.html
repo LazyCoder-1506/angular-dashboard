@@ -1,36 +1,36 @@
 <ng-container *ngIf="!(isLoading$ | async)">
   <ng-container *ngIf="(settings$ | async) as settingsObject">
-    <div class="p-2 md:p-8" *ngIf="settingsObject?.layout == 'row'">
-      <div class="order-{{settingsObject.sectionOrder.indexOf('cards')+1}} flex flex-wrap md:gap-4 my-4 justify-center lg:justify-between">
+    <div class="grid grid-cols-1 gap-4 p-2 md:p-8" *ngIf="settingsObject?.layout == 'row'">
+      <div [style.order]="settingsObject.sectionOrder.indexOf('cards')+1" class="flex flex-wrap md:gap-4 justify-center lg:justify-between">
         <app-number-card [style.order]="settingsObject.cardOrder.indexOf('population')+1" title="Cohort Population" [totalValue]="2500"></app-number-card>
         <app-number-card [style.order]="settingsObject.cardOrder.indexOf('ER')+1" title="Total ER" [currentValue]="3969" currentLabel="April-2023" [previousValue]="4459" previousLabel="March-2023"></app-number-card>
         <app-number-card [style.order]="settingsObject.cardOrder.indexOf('admission')+1" title="Total Admission" [currentValue]="4179" currentLabel="April-2023" [previousValue]="4511" previousLabel="March-2023"></app-number-card>
         <app-number-card [style.order]="settingsObject.cardOrder.indexOf('cost')+1" title="Average Cost" [currentValue]="11.31" currentLabel="April-2023" [previousValue]="12" previousLabel="March-2023" metricCurrency="USD"></app-number-card>
         <app-number-card [style.order]="settingsObject.cardOrder.indexOf('specialist')+1" title="Total Specialist Visit" [currentValue]="5244" currentLabel="April-2023" [previousValue]="5779" previousLabel="March-2023"></app-number-card>
       </div>
-      <div class="order-{{settingsObject.sectionOrder.indexOf('charts')+1}} grid grid-cols-1 md:grid-cols-2 gap-4">
-        <app-chart-card [style.order]="settingsObject.chartOrder.indexOf('age')" title="Population by Age" [data]="ageData"></app-chart-card>
-        <app-chart-card [style.order]="settingsObject.chartOrder.indexOf('location')" title="Population by Location" [data]="locationData"></app-chart-card>
+      <div [style.order]="settingsObject.sectionOrder.indexOf('charts')+1" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <app-chart-card [style.order]="settingsObject.chartOrder.indexOf('age')+1" title="Population by Age" [data]="ageData"></app-chart-card>
+        <app-chart-card [style.order]="settingsObject.chartOrder.indexOf('location')+1" title="Population by Location" [data]="locationData"></app-chart-card>
       </div>
-      <div class="order-{{settingsObject.sectionOrder.indexOf('yearly')+1}} flex my-4 justify-stretch">
+      <div [style.order]="settingsObject.sectionOrder.indexOf('yearly')+1" class="flex justify-stretch">
         <app-yearly-analysis-card></app-yearly-analysis-card>
       </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-2 md:p-8" [ngClass]="settingsObject.cardSize == 'large' ? 'lg:grid-cols-5' : 'lg:grid-cols-10'" *ngIf="settingsObject?.layout == 'column'">
-      <div [ngClass]="settingsObject.cardSize == 'small' ? 'lg:col-span-3 flex flex-wrap gap-4 justify-center self-start' : 'md:col-span-1 grid grid-cols-1 gap-4'">
+      <div [style.order]="settingsObject.sectionOrder.indexOf('cards')+1" [ngClass]="settingsObject.cardSize == 'small' ? 'lg:col-span-3 flex flex-wrap gap-4 justify-center self-start' : 'md:col-span-1 grid grid-cols-1 gap-4'">
         <app-number-card [style.order]="settingsObject.cardOrder.indexOf('population')+1" title="Cohort Population" [totalValue]="2500"></app-number-card>
         <app-number-card [style.order]="settingsObject.cardOrder.indexOf('ER')+1" title="Total ER" [currentValue]="3969" currentLabel="April-2023" [previousValue]="4459" previousLabel="March-2023"></app-number-card>
         <app-number-card [style.order]="settingsObject.cardOrder.indexOf('admission')+1" title="Total Admission" [currentValue]="4179" currentLabel="April-2023" [previousValue]="4511" previousLabel="March-2023"></app-number-card>
         <app-number-card [style.order]="settingsObject.cardOrder.indexOf('cost')+1" title="Average Cost" [currentValue]="11.31" currentLabel="April-2023" [previousValue]="12" previousLabel="March-2023" metricCurrency="USD"></app-number-card>
         <app-number-card [style.order]="settingsObject.cardOrder.indexOf('specialist')+1" title="Total Specialist Visit" [currentValue]="5244" currentLabel="April-2023" [previousValue]="5779" previousLabel="March-2023"></app-number-card>
       </div>
-      <div class="md:col-span-2 flex flex-col gap-4" [ngClass]="settingsObject.cardSize == 'large' ? 'lg:col-span-4' : 'lg:col-span-7'">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 justify-stretch">
-          <app-chart-card [style.order]="settingsObject.chartOrder.indexOf('age')" title="Population by Age" [data]="ageData"></app-chart-card>
-          <app-chart-card [style.order]="settingsObject.chartOrder.indexOf('location')" title="Population by Location" [data]="locationData"></app-chart-card>
+      <div [style.order]="math.min(settingsObject.sectionOrder.indexOf('charts')+1, settingsObject.sectionOrder.indexOf('yearly')+1)" class="md:col-span-2 flex flex-col gap-4" [ngClass]="settingsObject.cardSize == 'large' ? 'lg:col-span-4' : 'lg:col-span-7'">
+        <div [style.order]="settingsObject.sectionOrder.indexOf('charts')+1" class="grid grid-cols-1 lg:grid-cols-2 gap-4 justify-stretch">
+          <app-chart-card [style.order]="settingsObject.chartOrder.indexOf('age')+1" title="Population by Age" [data]="ageData"></app-chart-card>
+          <app-chart-card [style.order]="settingsObject.chartOrder.indexOf('location')+1" title="Population by Location" [data]="locationData"></app-chart-card>
         </div>
-        <div class="justify-stretch">
+        <div [style.order]="settingsObject.sectionOrder.indexOf('yearly')+1" class="justify-stretch">
           <app-yearly-analysis-card></app-yearly-analysis-card>
         </div>
       </div>

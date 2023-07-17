@@ -15,6 +15,7 @@ export class BodyComponent implements OnInit {
   locationData: any = [['Alabama', 145], ['Florida', 250], ['Louisiana', 195], ['Kentucky', 220], ['Virginia', 200], ['Georgia', 190]];
   settings$: Observable<Setting>;
   isLoading$: Observable<boolean>;
+  math = Math;
 
 
   constructor(private store: Store) {

@@ -1,4 +1,4 @@
 ## Problems I could not solve
 
 - DataLabel contrast color in donut charts
-- Can't reorder whole sections
+- Reordering whole sections works, but not exactly correct on mobiles
