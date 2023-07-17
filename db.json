@@ -2,22 +2,22 @@
   "settings": {
     "layout": "row",
     "cardSize": "large",
-    "chartType": "column",
+    "chartType": "donut",
     "cardOrder": [
-      "cost",
-      "population",
       "admission",
+      "cost",
       "ER",
+      "population",
       "specialist"
     ],
     "sectionOrder": [
+      "yearly",
       "charts",
-      "cards",
-      "yearly"
+      "cards"
     ],
     "chartOrder": [
-      "location",
-      "age"
+      "age",
+      "location"
     ]
   }
 }

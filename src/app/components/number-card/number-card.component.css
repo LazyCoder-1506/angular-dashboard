@@ -1,5 +1,6 @@
 :host {
   width: 100%;
+  min-width: 200px;
 }
 :host.large {
   width: 19%;
@@ -9,4 +10,10 @@
 } 
 :host.column-small {
   width: calc(50% - 16px);
+}
+
+@media (max-width: 767px) {
+  :host, :host.large, :host.small, :host.column-small {
+    width: 100%;
+  }
 }
