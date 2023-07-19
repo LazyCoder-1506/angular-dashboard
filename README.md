@@ -30,7 +30,7 @@ Dashboard built with:
 #### Step 0
 Make sure node is installed and updated. Install Angular CLI if not already installled.
 ```
-npm install –g @angular/cli
+npm install -g @angular/cli
 ```
 
 #### Step 1
@@ -68,3 +68,5 @@ Unit testing in a separate terminal
 ng test --code-coverage
 ```
 This will run unit tests and show the report on localhost port 9876 by default. Make sure that json-server is running before testing
+
+To kill any process, press `Ctrl+C` in corresponding terminal
