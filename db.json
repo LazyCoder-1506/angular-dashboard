@@ -4,11 +4,11 @@
     "cardSize": "large",
     "chartType": "donut",
     "cardOrder": [
-      "specialist",
-      "admission",
+      "population",
       "ER",
+      "admission",
       "cost",
-      "population"
+      "specialist"
     ],
     "sectionOrder": [
       "cards",

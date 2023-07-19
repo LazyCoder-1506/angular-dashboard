@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectorRef, HostBinding } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { Setting } from 'src/app/state/setting/setting.model';
@@ -20,7 +20,7 @@ export class NumberCardComponent implements OnInit {
   settings$: Observable<Setting>;
   private subscription: Subscription;
 
-  constructor(private cdRef: ChangeDetectorRef, private store: Store) {
+  constructor(private store: Store) {
     this.settings$ = this.store.select(settingsSelector)
   }
 

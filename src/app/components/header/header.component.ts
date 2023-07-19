@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog'
 import { SettingsDialogComponent } from '../settings-dialog/settings-dialog.component';
 
