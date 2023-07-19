@@ -27,6 +27,12 @@ Dashboard built with:
 
 ## Installation Guide
 
+#### Step 0
+Make sure node is installed and updated. Install Angular CLI if not already installled.
+```
+npm install –g @angular/cli
+```
+
 #### Step 1
 Clone the repository to your local machine and open it's root once ready
 ```
@@ -50,14 +56,14 @@ This will start the json-server on localhost port 3000 by default. It will use d
 If json-server is already installed globally in your machine, you can omit `npx`
 
 #### Step 4
-Run the angular app
+Launch the angular app in a separate terminal
 ```
 ng serve
 ```
 This will serve the angular app on localhost port 4200 by default.
 
 #### Step 5
-Unit testing
+Unit testing in a separate terminal
 ```
 ng test --code-coverage
 ```
