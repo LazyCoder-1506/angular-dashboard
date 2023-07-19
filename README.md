@@ -1,4 +1,4 @@
-Dashboard built with:
+## Customisable Dashboard built with:
 - Angular
 - Angular Material for some UI components such as dialog box and drap-drop
 - TailwindCSS for styling
@@ -10,31 +10,32 @@ Dashboard built with:
 
 ## My Learnings along the way
 
-- Learnt angular, typescript and ngrx completely from scratch (had 0 knowledge of Angular ecosystem before this) in 2 days. Never learnt anything faster than this
+- Learnt angular, typescript and ngrx completely from scratch (had 0 knowledge of Angular ecosystem before this) in 2 days. Never learnt anything faster than this. If I knew Angular beforehand I could've completed the assignment sooner with better implementation.
 - Angular is awesome. Everything comes out of the box :)
-- Never really liked Material UI, and the verdict stands same after using Angular Material. Testing `mat` components is so compicated
+- Never really liked Material UI, and the verdict stands same after using Angular Material. Testing `mat` components is so complicated
 - Learnt unit testing as well, never did unit testing before this
 - Came across Gridster package for dragging and resizing sections on the page. Seemed like an overkill for me (because I'm a total beginner) but experienced folks may be able to create highly interactive dashboards with it
 
 ## Challenges I faced while working on the assignment
 
-- My code as well as architecture is jumbled up, and had to make multiple refactors along the way. As I spend more time working on these I should get better at how to write better code as well as design my app better.
-- Still confused about how to implement the search feature. A very basic way that I thought of was: have a variable named `searchQuery` in the settings state, and if this query appears as substring of the `title` of any card/chart, show that particular card/chart using `*ngIf="searchQuery.length == 0 || title.contains(searchQuery)"`
+- My code as well as architecture is jumbled up, and had to make multiple refactors along the way. As I spend more time working on these I will get better at how to write cleaner code as well as design my app more efficiently.
+- Still confused about how to implement the search feature. A very basic way that I thought of was: have a variable named `searchQuery` in the settings state, and if this query appears as substring of the `title` of any card/chart, show that particular card/chart using `*ngIf="searchQuery.length == 0 || title.contains(searchQuery)"`. However this will only match with title, not sure how to match chart data and properties
 - Couldn't figure out how to test Angular Material components such as radio button
-- I'm sure there are a lot of testcases I have missed to unit test
+- I'm guessing there are a lot of testcases I have missed to unit test
 - Reordering whole sections works, but not exactly correct on mobiles
-- DataLabel contrast color in donut charts (black text over black pie slice)
+- Not perfectly responsive on mobiles and tablets
+- DataLabel contrast color in donut charts (black text over black pie slice) is not working
 
 ## Installation Guide
 
 #### Step 0
-Make sure node is installed and updated. Install Angular CLI if not already installled.
+Make sure node is installed and updated. Install Angular CLI if not already installed.
 ```
 npm install -g @angular/cli
 ```
 
 #### Step 1
-Clone the repository to your local machine and open it's root once ready
+Clone the repository to your local machine and cd into root directory once ready
 ```
 git clone https://github.com/LazyCoder-1506/angular-dashboard.git
 cd angular-dashboard
